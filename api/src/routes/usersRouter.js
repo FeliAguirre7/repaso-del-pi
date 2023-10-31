@@ -1,19 +1,14 @@
-const {Router} = require("express");
+const { Router } = require("express");
 
-const usersRouter= Router();
+const usersRouter = Router();
 
-usersRouter.get("/", (req, res) => {
-    res.status(200).send("NIY: Esta ruta trae la info de los users")
-});
+const { createUserHandler, getUserHandler, getUsersHandler } = require("../handlers/usersHandlers")
 
-usersRouter.get("/:id", (req, res) => {
-    res.status(200).send("NIY: Esta ruta trae la info de un user determinado por id")
-});
 
-usersRouter.post("/", (req, res) => {
-    res.status(200).send("NIY: Esta ruta crea un nuevo user")
-});
+usersRouter.get("/", getUsersHandler)
 
-//NIY: Not implemented yet.
+usersRouter.get("/:id", getUserHandler);
+
+usersRouter.post("/", createUserHandler);
 
 module.exports = usersRouter

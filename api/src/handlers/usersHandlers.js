@@ -19,14 +19,16 @@ const getUserHandler = async (req, res) => {
   try {
     const user = await getUserById(id, source);
     res.status(200).json(user);
-  } catch (error) {}
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 };
 
 const createUserHandler = async (req, res) => {
   try {
     const { name, email, phone } = req.body;
     const newUser = await createUser(name, email, phone);
-    res.status(201).json(newUser);
+    res.status(201).json("creado exitosamente");
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

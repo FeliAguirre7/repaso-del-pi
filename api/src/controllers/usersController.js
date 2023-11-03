@@ -17,6 +17,7 @@ const cleanArray = (arr) => {
 const createUser = async (name, email, phone) => {
   return await User.create({ name, email, phone });
 };
+
 const getUserById = async (id, source) => {
   const user =
     source === "api"

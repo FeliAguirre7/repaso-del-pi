@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 const CardsContainer = () => {
   const users = useSelector((state) => state.users);
+  const infoDeDiego = "loq que diego quiere tener guardado aqui";
 
   return (
     <div className={style.container}>
@@ -14,6 +15,7 @@ const CardsContainer = () => {
             name={user.name}
             phone={user.phone}
             email={user.email}
+            upiti={infoDeDiego}
           />
         );
       })}

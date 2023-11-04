@@ -7,6 +7,7 @@ const {
 
 const getUsersHandler = async (req, res) => {
   const { name } = req.query;
+  console.log("=======>>>>>>>", req);
 
   const results = name ? await searchUserByName(name) : await getAllUsers();
 
